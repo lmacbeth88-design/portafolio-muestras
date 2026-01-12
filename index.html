@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luis Macbeth – Portafolio Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --text: #e2e8f0;
+      --accent: #00f5ff;
+      --accent2: #a78bfa;
+      --card: rgba(30, 41, 59, 0.6);
+      --glow: 0 0 15px rgba(0, 245, 255, 0.4);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    header {
+      text-align: center;
+      padding: 80px 0 60px;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: var(--glow);
+    }
+    .subtitle {
+      font-size: 1.3rem;
+      color: #94a3b8;
+      max-width: 700px;
+      margin: 16px auto;
+    }
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    section { margin: 60px 0; }
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      color: var(--accent);
+      text-shadow: var(--glow);
+      margin-bottom: 24px;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    .skill {
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: 1px solid var(--accent);
+      font-size: 1rem;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 245, 255, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--glow);
+      border-color: var(--accent);
+    }
+    /* GRADIENTES ANIMADOS */
+    .project-img {
+      width: 100%;
+      height: 200px;
+      display: block;
+      background-size: 200% 200%;
+      animation: gradientShift 8s ease infinite;
+    }
+    .lexium { background: linear-gradient(135deg, #00f5ff 0%, #0f172a 50%, #a78bfa 100%); }
+    .neuro { background: linear-gradient(135deg, #ff0076 0%, #590fb7 100%); }
+    .tanato { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); }
+    .visual { background: linear-gradient(135deg, #f857a6 0%, #ff5858 100%); }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .project-info { padding: 20px; }
+    .project-title {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+    .project-desc {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: var(--glow);
+    }
+    .contact {
+      text-align: center;
+      background: var(--card);
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid var(--accent);
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.8rem; }
+      h2 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Luis Macbeth</h1>
+      <p class="subtitle">
+        Diseñador web con alma teatral • Especialista en experiencias digitales que <span class="highlight">cuentan historias y convierten</span>
+      </p>
+    </header>
+
+    <section>
+      <h2>Habilidades</h2>
+      <div class="skills">
+        <span class="skill">HTML5 + CSS3</span>
+        <span class="skill">JavaScript / React</span>
+        <span class="skill">WordPress + WooCommerce</span>
+        <span class="skill">Diseño UX/UI</span>
+        <span class="skill">SEO Básico</span>
+        <span class="skill">Comunicación Visual (UNAM)</span>
+        <span class="skill">Teatro y Narrativa</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Últimos proyectos</h2>
+      <div class="project-grid">
+        <!-- 1 -->
+        <div class="project-card">
+          <div class="project-img lexium"></div>
+          <div class="project-info">
+            <h3 class="project-title">Lexium IA v80</h3>
+            <p class="project-desc">Motor jurídico multi-agente con 5 IAs colaborativas. Diseño cyberpunk premium, UX intuitiva y conversión alta.</p>
+            <a href="#" class="btn">Ver demo →</a>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="project-card">
+          <div class="project-img neuro"></div>
+          <div class="project-info">
+            <h3 class="project-title">Neuro App</h3>
+            <p class="project-desc">App móvil para entrenamiento cerebral con gamificación y métricas en tiempo real.</p>
+            <a href="#" class="btn">Ver demo →</a>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="project-card">
+          <div class="project-img tanato"></div>
+          <div class="project-info">
+            <h3 class="project-title">Web Tanatología</h3>
+            <p class="project-desc">Sitio institucional con enfoque sereno, respetuoso y conversiones de agendar citas.</p>
+            <a href="#" class="btn">Ver demo →</a>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="project-card">
+          <div class="project-img visual"></div>
+          <div class="project-info">
+            <h3 class="project-title">VisualBoost</h3>
+            <p class="project-desc">Sitio institucional E-comerce.</p>
+            <a href="#" class="btn">Ver demo →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>¿Listo para tu próxima web?</h2>
+      <p>Primera consultoría y diagnóstico <strong>GRATIS</strong>. Hablemos de cómo tu web puede empezar a trabajar para ti.</p>
+      <p style="margin: 20px 0;">
+        <strong>Escríbeme:</strong><br>
+        <a href="mailto:lmacbeth88@gmail.com">lmacbeth88@gmail.com</a><br>
+        WhatsApp: <a href="https://wa.me/525569619300">+52 55 69619 3000</a>
+      </p>
+      <a href="https://wa.me/525569619300" class="btn" target="_blank">¡Hablemos ahora! →</a>
+    </section>
+  </div>
+</body>
+</html>
