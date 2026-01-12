@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visual Boost</title>
+  <!-- Tailwind CSS vía CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS para animaciones -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'nd-red': '#d32f2f',
+            'nd-dark': '#0a0a0a',
+            'nd-gray': '#1a1a1a',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
+    .emergency-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #c62828;
+      color: white;
+      border: none;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      cursor: pointer;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .emergency-btn:hover {
+      background: #b71c1c;
+      transform: scale(1.05);
+    }
+    .emergency-btn:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center px-4 bg-black relative overflow-hidden">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full border border-gray-800 opacity-10"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full border border-gray-800 opacity-5"></div>
+
+    <div class="text-center max-w-4xl mx-auto z-10" data-aos="fade-up">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+        Tu e-commerce,<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 inline-block">
+          elevado a otro nivel visual
+        </span>
+      </h1>
+
+      <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+        Fotografía y video profesional para transformar tu presencia digital en una experiencia visual irresistible.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="px-8 py-4 bg-nd-red text-white font-semibold rounded-lg flex items-center justify-center gap-2 hover:bg-[#b71c1c] transition-colors shadow-lg">
+          Ver portafolio (próximamente)
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        <button class="px-8 py-4 bg-transparent border border-gray-700 text-white font-semibold rounded-lg hover:bg-gray-900 transition-colors">
+          Contactar
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-20 px-4 bg-nd-gray" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Especialidades</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Contenido visual diseñado para convertir visitantes en clientes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800 hover:border-nd-red/50 transition-all" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-12 h-12 rounded-lg bg-nd-red/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="2">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Fotografía de Producto</h3>
+          <p class="text-gray-400">Imágenes nítidas, iluminación profesional y styling premium.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800 hover:border-nd-red/50 transition-all" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-12 h-12 rounded-lg bg-nd-red/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="2">
+              <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path>
+              <rect x="2" y="6" width="14" height="12" rx="2"></rect>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Video Comercial</h3>
+          <p class="text-gray-400">Videos impactantes para redes sociales, landing pages y más.</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800 hover:border-nd-red/50 transition-all" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-12 h-12 rounded-lg bg-nd-red/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Contenido para E-commerce</h3>
+          <p class="text-gray-400">Assets optimizados: 360°, GIFs, lifestyle, banners, carousels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-20 px-4 bg-gradient-to-r from-gray-900 to-black text-center" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Amplía tu alcance,<br>
+        <span class="text-nd-red">con la mirada N.D.</span>
+      </h2>
+      <p class="text-gray-300 text-lg mb-8">
+        En el e-commerce, la primera impresión es visual…<br>
+        <em>y la segunda también.</em>
+      </p>
+      <button class="px-8 py-4 bg-nd-red text-white font-semibold rounded-lg hover:bg-[#b71c1c] transition-colors shadow-lg">
+        Programar una consulta creativa
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-500 text-sm border-t border-gray-800">
+    <p>© 2026 Visual Boost — Fotografía y Video para E-commerce</p>
+  </footer>
+
+  <!-- Botón de emergencia -->
+  <button id="emergencyBtn" class="emergency-btn" title="Botón de emergencia">
+    !
+  </button>
+
+  <script>
+    // Inicializar AOS
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ duration: 800, once: true });
+
+      // Botón de emergencia: vibración si soporta, o alert
+      document.getElementById('emergencyBtn').addEventListener('click', () => {
+        if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+        else alert('¡Emergencia activada!');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Silas Voss | Tanatología Ciberética</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600&display=swap');
+
+    :root {
+      --neon-pink: #ff00e6;
+      --neon-blue: #00f7ff;
+      --neon-purple: #b027ff;
+      --dark-bg: #0d0221;
+      --text-glow: 0 0 8px var(--neon-pink), 0 0 16px var(--neon-pink);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--dark-bg);
+      color: #e0e0ff;
+      font-family: 'Exo 2', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .glitch {
+      position: relative;
+      animation: glitch 3s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 0 0 var(--neon-blue), 0 0 var(--neon-pink); }
+      14% { text-shadow: -2px 0 var(--neon-pink), 2px 0 var(--neon-blue); }
+      28% { text-shadow: 0 0 var(--neon-blue), 0 0 var(--neon-pink); }
+      42% { text-shadow: 2px 0 var(--neon-blue), -2px 0 var(--neon-pink); }
+      70% { text-shadow: 0 0 var(--neon-blue), 0 0 var(--neon-pink); }
+      100% { text-shadow: 0 0 var(--neon-blue), 0 0 var(--neon-pink); }
+    }
+
+    .neon-border {
+      position: relative;
+    }
+
+    .neon-border::before {
+      content: '';
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue), var(--neon-purple));
+      z-index: -1;
+      filter: blur(10px);
+      opacity: 0.7;
+      border-radius: 8px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      padding: 2rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(176, 39, 255, 0.1) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(0, 247, 255, 0.1) 0%, transparent 30%);
+      pointer-events: none;
+    }
+
+    .logo {
+      font-size: 2.8rem;
+      color: white;
+      text-shadow: var(--text-glow);
+      margin-bottom: 1rem;
+    }
+
+    nav {
+      margin-top: 1.5rem;
+    }
+
+    nav a {
+      color: #c0b0ff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+      text-shadow: 0 0 6px rgba(176, 39, 255, 0.5);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--neon-pink);
+      text-shadow: var(--text-glow);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      color: white;
+      text-shadow: 
+        0 0 10px var(--neon-pink),
+        0 0 20px var(--neon-pink),
+        0 0 30px rgba(255, 0, 230, 0.5);
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      color: #d0c0ff;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      background: transparent;
+      color: white;
+      border: 2px solid var(--neon-pink);
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      margin: 0.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px rgba(255, 0, 230, 0.5);
+    }
+
+    .btn:hover {
+      background: rgba(255, 0, 230, 0.2);
+      box-shadow: 0 0 20px rgba(255, 0, 230, 0.8);
+      transform: translateY(-3px);
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -60%;
+      width: 20px;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: rotate(25deg);
+      transition: all 0.6s ease;
+    }
+
+    .btn:hover::after {
+      left: 120%;
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+      color: white;
+      text-shadow: 0 0 10px var(--neon-blue);
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: rgba(18, 5, 45, 0.6);
+      border: 1px solid rgba(176, 39, 255, 0.3);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 247, 255, 0.2);
+    }
+
+    .service-card h3 {
+      color: var(--neon-pink);
+      margin: 1rem 0;
+    }
+
+    /* About */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      height: 400px;
+      background: url('https://placehold.co/600x400/0d0221/b027ff?text=DR.+VOSS') center/cover no-repeat;
+      border: 2px solid var(--neon-purple);
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(176, 39, 255, 0.4);
+    }
+
+    /* Contact */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(18, 5, 45, 0.7);
+      padding: 2.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 247, 255, 0.3);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--neon-blue);
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      background: rgba(5, 0, 20, 0.7);
+      border: 1px solid rgba(176, 39, 255, 0.5);
+      color: white;
+      font-family: 'Exo 2', sans-serif;
+      border-radius: 4px;
+    }
+
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background: #050015;
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid rgba(176, 39, 255, 0.3);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .footer-links a {
+      color: #a090ff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--neon-pink);
+    }
+
+    .copyright {
+      color: #7060aa;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.8rem; }
+      .hero p { font-size: 1.1rem; }
+      nav a { display: block; margin: 0.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo glitch">Ψ THANATECH</div>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#sobre">Sobre Mí</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="container">
+      <h1 class="glitch">DR. SILAS VOSS</h1>
+      <p>Tanatólogo Cibernético | Asesoría en Duelo Digital | Transición Consciente 2077</p>
+      <a href="#contacto" class="btn">Conectar Sesión</a>
+      <a href="#servicios" class="btn">Explorar Protocolos</a>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="container">
+      <h2 class="section-title">Protocolos de Transición</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Neuro-Duelo™</h3>
+          <p>Sesiones de procesamiento emocional asistidas por IA empática. Interfaces neuronales suaves para sanar el trauma post-pérdida.</p>
+        </div>
+        <div class="service-card">
+          <h3>Legado Digital</h3>
+          <p>Criptografía de memoria: preservación ética de recuerdos, mensajes y personalidad en nodos seguros blockchain.</p>
+        </div>
+        <div class="service-card">
+          <h3>Ceremonia Holográfica</h3>
+          <p>Rituales de despedida en entornos inmersivos AR/VR. Presencia simulada con IA conversacional entrenada en el fallecido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="container">
+      <h2 class="section-title">Perfil Neuro-Etico</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Dr. Silas Voss es pionero en <strong>Tanatología Ciberética</strong>, disciplina que fusiona ética digital, neurociencia del duelo y filosofía de la conciencia.</p>
+          <br>
+          <p>Con 18 años de experiencia en hospitales de alta tecnología y clínicas de neurorehabilitación, desarrolló el protocolo <em>Ψ-Transit</em>, reconocido por la OMS Ciberética (2074).</p>
+          <br>
+          <p>Formado en la Academia de Psicología Poshumana de Neo-Tokio. Miembro del Consejo Ético de la Red Neural Global.</p>
+          <br>
+          <p>«La muerte no es un apagón. Es una migración de datos sensibles. Mi labor: asegurar que el traspaso sea humano, digno y significativo.»</p>
+        </div>
+        <div class="about-image"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="container">
+      <h2 class="section-title">Iniciar Conexión Segura</h2>
+      <div class="contact-form neon-border">
+        <form>
+          <div class="form-group">
+            <label for="nombre">Nombre / Alias</label>
+            <input type="text" id="nombre" placeholder="Ej: Kira-7" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Neuro-Correo / Signal ID</label>
+            <input type="email" id="email" placeholder="kira7@neuralink.mesh" required>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje (Codificación AES-256)</label>
+            <textarea id="mensaje" placeholder="Describe tu necesidad de transición..." required></textarea>
+          </div>
+          <button type="submit" class="btn">Enviar Encriptado</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Ψ THANATECH — Interfaces para el Umbral</p>
+      <div class="footer-links">
+        <a href="#">Ética de la IA Post-Morte</a>
+        <a href="#">Política de Privacidad Neural</a>
+        <a href="#">Licencia OMS-CYB-2077</a>
+      </div>
+      <p class="copyright">© 2077 Dr. Silas Voss | Todos los recuerdos reservados bajo Protocolo Mnemosyne v3.1</p>
+    </div>
+  </footer>
+</body>
+</html>
+
